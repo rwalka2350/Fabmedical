@@ -6,7 +6,14 @@ const request = require('request');
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'dist/content-web')));
-const contentApiUrl = process.env.CONTENT_API_URL || "http://localhost:3001";
+const contentApiUrl = process.env.CONTENT_API_URL || "http://20.121.35.249:3001";
+
+
+
+
+
+
+
 
 
 function getSessions(cb) {
@@ -18,6 +25,16 @@ function getSessions(cb) {
     cb(null, data);
   });
 }
+
+
+
+
+
+
+
+
+
+
 
 function getSpeakers(cb) {
   request(contentApiUrl + '/speakers', function (err, response, body) {
